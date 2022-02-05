@@ -41,14 +41,14 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     returnmessage = event.message.text
-    if event.message.text == "こんにちは":
-        returnmessage = "どうもこんにちは"
-    elif event.message.text == "こんばんは":
-        returnmessage = "どうもこんばんは"
-    elif event.message.text == "疲れた":
-        returnmessage = "お疲れ様でした"
-    elif event.message.text == "ネオテック":
-        returnmessage = "赤字は悪"
+    if event.message.text == "ワン":
+        returnmessage = "ワンワン！"
+    elif event.message.text == "松田":
+        returnmessage = "清水"
+    elif event.message.text == "村上":
+        returnmessage = "無能"
+    else:
+        returnmessage = "ワン！"
     # 返信
     line_bot_api.reply_message(
         event.reply_token,
