@@ -51,9 +51,8 @@ def handle_message(event):
         returnmessage = "無能"
     elif event.message.text == "今日は何日？": 
         date = datetime.date.today()
-        # returnDay = date.year + "年" + date.month + "月" + date.day + "日"
-        
-        returnmessage = date.year
+        returnDay = str(date.year) + "年" + str(date.month) + "月" + str(date.day) + "日"
+        returnmessage = returnDay
     else:
         returnmessage = "ワン！"
     # 返信
