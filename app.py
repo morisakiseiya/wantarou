@@ -49,9 +49,13 @@ def handle_message(event):
         returnmessage = "清水"
     elif event.message.text == "村上":
         returnmessage = "無能"
-    elif event.message.text == "今日は何日？": 
+    elif event.message.text == "今日": 
         date = datetime.date.today()
-        returnDay = str(date.year) + "年" + str(date.month) + "月" + str(date.day) + "日"
+        returnDay = str(date.year) + "年" + str(date.month) + "月" + str(date.day) + "日 だワン！"
+        returnmessage = returnDay
+    elif event.message.text == "明日": 
+        date = datetime.datetime()
+        returnDay = str(date.now()+ datetime.timedelta(days = 1).year) + "年" + str(date.now()+ datetime.timedelta(days = 1).month) + "月" + str(date.now()+ datetime.timedelta(days = 1).day) + "日 だワン！"
         returnmessage = returnDay
     else:
         returnmessage = "ワン！"
