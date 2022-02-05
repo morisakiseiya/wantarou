@@ -10,6 +10,8 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
 import os
+import datetime
+
 
 app = Flask(__name__)
 
@@ -47,6 +49,10 @@ def handle_message(event):
         returnmessage = "清水"
     elif event.message.text == "村上":
         returnmessage = "無能"
+    elif event.message.text == "今日は何日？": 
+        date = datetime.date.today()
+        returnDay = date.year + "年" + date.month + "" + date.day + "日"
+        returnmessage = returnDay
     else:
         returnmessage = "ワン！"
     # 返信
